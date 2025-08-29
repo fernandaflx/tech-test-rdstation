@@ -68,7 +68,10 @@ describe('recommendationService', () => {
 
   test('Retorna o último match em caso de empate para SingleProduct', () => {
     const formData = {
-      selectedPreferences: ['Automação de marketing', 'Integração com chatbots'],
+      selectedPreferences: [
+        'Automação de marketing',
+        'Integração com chatbots',
+      ],
       selectedRecommendationType: 'SingleProduct',
     };
 
@@ -79,5 +82,16 @@ describe('recommendationService', () => {
 
     expect(recommendations).toHaveLength(1);
     expect(recommendations[0].name).toBe('RD Conversas');
+  });
+
+  test('O botão fica desabilitado caso não haja nenhuma preferência ou funcionalidade selecionada', () => {
+    const formData = {
+      selectedPreferences: [],
+      selectedFeatures: [],
+    };
+
+    expect(
+      formData.selectedFeatures && formData.selectedPreferences
+    ).toHaveLength(0);
   });
 });

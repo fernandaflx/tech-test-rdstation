@@ -17,16 +17,8 @@ function Form() {
     selectedRecommendationType: '',
   });
 
-  const disableButton = ({
-    selectedPreferences,
-    selectedFeatures,
-    selectedRecommendationType,
-  }) => {
-    return (
-      selectedPreferences.length === 0 &&
-      selectedFeatures.length === 0 &&
-      selectedRecommendationType === ''
-    );
+  const disableButton = ({ selectedPreferences, selectedFeatures }) => {
+    return selectedPreferences.length === 0 && selectedFeatures.length === 0;
   };
 
   const { getRecommendations } = useRecommendations(products);
