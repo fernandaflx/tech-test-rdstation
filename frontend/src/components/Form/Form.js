@@ -17,8 +17,22 @@ function Form() {
     selectedRecommendationType: '',
   });
 
+  const disableButton = ({
+    selectedPreferences,
+    selectedFeatures,
+    selectedRecommendationType,
+  }) => {
+    return (
+      selectedPreferences.length === 0 &&
+      selectedFeatures.length === 0 &&
+      selectedRecommendationType === ''
+    );
+  };
+
   const { getRecommendations } = useRecommendations(products);
 
+  // O submit ficou responsavél apneas por chamar getRecommendations, passando o formData e a lista de produtos.
+  // O resultado no contexto da aplicação usando a função "updateRecommendations" para que possa ser exibido na lista de recomendações.
   const handleSubmit = (e) => {
     e.preventDefault();
 
@@ -52,7 +66,10 @@ function Form() {
       />
 
       <div className="md:col-span-2 flex justify-end md:items-end">
-        <SubmitButton text="Obter recomendação" />
+        <SubmitButton
+          text="Obter recomendação"
+          disabled={disableButton(formData)}
+        />
       </div>
     </form>
   );
