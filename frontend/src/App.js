@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext } from 'react';
 import Form from './components/Form/Form';
 import RecommendationList from './components/RecommendationList/RecommendationList';
 import { RecommendationContext } from './context/RecommendationContext';
@@ -8,11 +8,18 @@ function App() {
 
   return (
     <div className="bg-gray-100 min-h-screen flex flex-col justify-center items-center">
-      <h1 className="text-3xl font-bold mb-8">
-        Recomendador de Produtos RD Station
-      </h1>
+      <img
+        src="./logo.svg"
+        alt="RD Station logo"
+        className="sm:h-12 h-8 my-6"
+      />
+
       <div className="bg-white p-8 rounded-lg shadow-md w-full md:w-3/4 lg:w-1/2 grid grid-cols-1 md:grid-cols-2 gap-8">
         <div className="col-span-2 mb-4">
+          <h1 className="sm:text-3xl text-2xl font-bold mb-8 text-center">
+            Recomendador de Produtos RD Station
+          </h1>
+
           <p className="text-lg">
             Bem-vindo ao Recomendador de Produtos RD Station. Aqui você pode
             encontrar uma variedade de produtos da RD Station, cada um projetado
