@@ -50,7 +50,6 @@ function Form() {
           handleChange('selectedRecommendationType', selected)
         }
       />
-      {/* <SubmitButton text="Obter recomendação" /> */}
 
       <div className="md:col-span-2 flex justify-end md:items-end">
         <SubmitButton text="Obter recomendação" />
