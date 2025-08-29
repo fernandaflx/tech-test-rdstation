@@ -8,7 +8,8 @@ function Preferences({
   selectedPreferences = [],
   onPreferenceChange,
 }) {
-  const [currentPreferences, setCurrentPreferences] = useState(selectedPreferences)
+  const [currentPreferences, setCurrentPreferences] =
+    useState(selectedPreferences);
 
   const handlePreferenceChange = (preference) => {
     const updatedPreferences = currentPreferences.includes(preference)

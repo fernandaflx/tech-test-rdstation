@@ -28,7 +28,8 @@ function Form() {
 
   return (
     <form
-      className="max-w-md mx-auto p-4 bg-white rounded-lg shadow-md"
+      className=" mx-auto p-4 bg-white rounded-lg shadow-md grid grid-cols-1 md:grid-cols-2 gap-8"
+      // className=" mx-auto p-4 bg-white rounded-lg shadow-md "
       onSubmit={handleSubmit}
     >
       <Preferences
@@ -37,6 +38,7 @@ function Form() {
           handleChange('selectedPreferences', selected)
         }
       />
+
       <Features
         features={features}
         onFeatureChange={(selected) =>
@@ -48,7 +50,11 @@ function Form() {
           handleChange('selectedRecommendationType', selected)
         }
       />
-      <SubmitButton text="Obter recomendação" />
+      {/* <SubmitButton text="Obter recomendação" /> */}
+
+      <div className="md:col-span-2 flex justify-end md:items-end">
+        <SubmitButton text="Obter recomendação" />
+      </div>
     </form>
   );
 }
